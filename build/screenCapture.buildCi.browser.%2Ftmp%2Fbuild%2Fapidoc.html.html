@@ -1,0 +1,4248 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://acuminous.gitbooks.io/yadda-user-guide">yadda (v1.3.0)</a>
+</h1>
+<h4>A true BDD framework for JavaScript</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda">module yadda</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.Context">
+            function <span class="apidocSignatureSpan">yadda.</span>Context
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.Dictionary">
+            function <span class="apidocSignatureSpan">yadda.</span>Dictionary
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.FeatureFileSearch">
+            function <span class="apidocSignatureSpan">yadda.</span>FeatureFileSearch
+            <span class="apidocSignatureSpan">(directories)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.FileSearch">
+            function <span class="apidocSignatureSpan">yadda.</span>FileSearch
+            <span class="apidocSignatureSpan">(directories, patterns)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.Interpreter">
+            function <span class="apidocSignatureSpan">yadda.</span>Interpreter
+            <span class="apidocSignatureSpan">(libraries)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.Library">
+            function <span class="apidocSignatureSpan">yadda.</span>Library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.Platform">
+            function <span class="apidocSignatureSpan">yadda.</span>Platform
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.Yadda">
+            function <span class="apidocSignatureSpan">yadda.</span>Yadda
+            <span class="apidocSignatureSpan">(libraries, interpreter_context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.createInstance">
+            function <span class="apidocSignatureSpan">yadda.</span>createInstance
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>BasePlugin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>EventBus</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>FeatureFileSearch.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>ScenarioLevelPlugin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>StepLevelPlugin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>StringUtils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>converters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>fn</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Chinese</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Dutch</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.English</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.French</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.German</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Norwegian</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Pirate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Polish</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Portuguese</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Russian</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Spanish</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>localisation.Ukrainian</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>parsers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>phantom_process</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>plugins</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.</span>shims</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.BasePlugin">module yadda.BasePlugin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.BasePlugin.create">
+            function <span class="apidocSignatureSpan">yadda.BasePlugin.</span>create
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.EventBus">module yadda.EventBus</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.EventBus.instance">
+            function <span class="apidocSignatureSpan">yadda.EventBus.</span>instance
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">yadda.EventBus.</span>ON_DEFINE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">yadda.EventBus.</span>ON_EXECUTE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">yadda.EventBus.</span>ON_SCENARIO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">yadda.EventBus.</span>ON_STEP</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.FeatureFileSearch">module yadda.FeatureFileSearch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.FeatureFileSearch.FeatureFileSearch">
+            function <span class="apidocSignatureSpan">yadda.</span>FeatureFileSearch
+            <span class="apidocSignatureSpan">(directories)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.FeatureFileSearch.prototype">module yadda.FeatureFileSearch.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.FeatureFileSearch.prototype.each">
+            function <span class="apidocSignatureSpan">yadda.FeatureFileSearch.prototype.</span>each
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.FeatureFileSearch.prototype.list">
+            function <span class="apidocSignatureSpan">yadda.FeatureFileSearch.prototype.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.ScenarioLevelPlugin">module yadda.ScenarioLevelPlugin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.ScenarioLevelPlugin.init">
+            function <span class="apidocSignatureSpan">yadda.ScenarioLevelPlugin.</span>init
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.StepLevelPlugin">module yadda.StepLevelPlugin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.StepLevelPlugin.init">
+            function <span class="apidocSignatureSpan">yadda.StepLevelPlugin.</span>init
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.StringUtils">module yadda.StringUtils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.StringUtils.indentation">
+            function <span class="apidocSignatureSpan">yadda.StringUtils.</span>indentation
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.StringUtils.isBlank">
+            function <span class="apidocSignatureSpan">yadda.StringUtils.</span>isBlank
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.StringUtils.isNotBlank">
+            function <span class="apidocSignatureSpan">yadda.StringUtils.</span>isNotBlank
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.StringUtils.rtrim">
+            function <span class="apidocSignatureSpan">yadda.StringUtils.</span>rtrim
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.StringUtils.trim">
+            function <span class="apidocSignatureSpan">yadda.StringUtils.</span>trim
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.converters">module yadda.converters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.converters.date">
+            function <span class="apidocSignatureSpan">yadda.converters.</span>date
+            <span class="apidocSignatureSpan">(value, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.converters.float">
+            function <span class="apidocSignatureSpan">yadda.converters.</span>float
+            <span class="apidocSignatureSpan">(value, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.converters.integer">
+            function <span class="apidocSignatureSpan">yadda.converters.</span>integer
+            <span class="apidocSignatureSpan">(value, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.converters.list">
+            function <span class="apidocSignatureSpan">yadda.converters.</span>list
+            <span class="apidocSignatureSpan">(value, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.converters.pass_through">
+            function <span class="apidocSignatureSpan">yadda.converters.</span>pass_through
+            <span class="apidocSignatureSpan">(value, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.converters.table">
+            function <span class="apidocSignatureSpan">yadda.converters.</span>table
+            <span class="apidocSignatureSpan">(value, next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.fn">module yadda.fn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.fn.async_noop">
+            function <span class="apidocSignatureSpan">yadda.fn.</span>async_noop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.fn.asynchronize">
+            function <span class="apidocSignatureSpan">yadda.fn.</span>asynchronize
+            <span class="apidocSignatureSpan">(ctx, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.fn.curry">
+            function <span class="apidocSignatureSpan">yadda.fn.</span>curry
+            <span class="apidocSignatureSpan">(ctx, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.fn.invoke">
+            function <span class="apidocSignatureSpan">yadda.fn.</span>invoke
+            <span class="apidocSignatureSpan">(fn, ctx, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.fn.is_function">
+            function <span class="apidocSignatureSpan">yadda.fn.</span>is_function
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.fn.noargs">
+            function <span class="apidocSignatureSpan">yadda.fn.</span>noargs
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.fn.noop">
+            function <span class="apidocSignatureSpan">yadda.fn.</span>noop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation">module yadda.localisation</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Language">
+            function <span class="apidocSignatureSpan">yadda.localisation.</span>Language
+            <span class="apidocSignatureSpan">(name, vocabulary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Chinese</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Dutch</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>English</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>French</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>German</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Norwegian</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Pirate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Polish</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Portuguese</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Russian</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Spanish</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>Ukrainian</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.localisation.</span>default</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Chinese">module yadda.localisation.Chinese</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Chinese.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Chinese.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Chinese.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Chinese.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Chinese.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Chinese.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Chinese.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Dutch">module yadda.localisation.Dutch</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Dutch.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Dutch.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Dutch.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Dutch.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Dutch.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Dutch.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Dutch.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.English">module yadda.localisation.English</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.English.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.English.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.English.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.English.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.English.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.English.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.English.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.French">module yadda.localisation.French</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.French.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.French.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.French.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.French.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.French.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.French.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.French.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.German">module yadda.localisation.German</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.German.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.German.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.German.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.German.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.German.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.German.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.German.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Norwegian">module yadda.localisation.Norwegian</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Norwegian.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Norwegian.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Norwegian.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Norwegian.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Norwegian.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Norwegian.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Norwegian.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Pirate">module yadda.localisation.Pirate</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Pirate.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Pirate.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Pirate.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Pirate.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Pirate.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Pirate.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Pirate.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Polish">module yadda.localisation.Polish</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Polish.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Polish.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Polish.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Polish.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Polish.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Polish.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Polish.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Portuguese">module yadda.localisation.Portuguese</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Portuguese.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Portuguese.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Portuguese.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Portuguese.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Portuguese.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Portuguese.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Portuguese.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Russian">module yadda.localisation.Russian</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Russian.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Russian.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Russian.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Russian.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Russian.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Russian.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Russian.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Spanish">module yadda.localisation.Spanish</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Spanish.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Spanish.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Spanish.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Spanish.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Spanish.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Spanish.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Spanish.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.localisation.Ukrainian">module yadda.localisation.Ukrainian</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">yadda.localisation.Ukrainian.</span>is_language</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Ukrainian.library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Ukrainian.</span>library
+            <span class="apidocSignatureSpan">(dictionary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Ukrainian.localise">
+            function <span class="apidocSignatureSpan">yadda.localisation.Ukrainian.</span>localise
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.localisation.Ukrainian.localise_library">
+            function <span class="apidocSignatureSpan">yadda.localisation.Ukrainian.</span>localise_library
+            <span class="apidocSignatureSpan">(library)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.parsers">module yadda.parsers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.parsers.FeatureFileParser">
+            function <span class="apidocSignatureSpan">yadda.parsers.</span>FeatureFileParser
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.parsers.FeatureParser">
+            function <span class="apidocSignatureSpan">yadda.parsers.</span>FeatureParser
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.parsers.StepParser">
+            function <span class="apidocSignatureSpan">yadda.parsers.</span>StepParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.phantom_process">module yadda.phantom_process</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.phantom_process.cwd">
+            function <span class="apidocSignatureSpan">yadda.phantom_process.</span>cwd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yadda.plugins">module yadda.plugins</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yadda.plugins.casper">
+            function <span class="apidocSignatureSpan">yadda.plugins.</span>casper
+            <span class="apidocSignatureSpan">(yadda, casper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.plugins.</span>jasmine</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yadda.plugins.</span>mocha</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda" id="apidoc.module.yadda">module yadda</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.Context" id="apidoc.element.yadda.Context">
+        function <span class="apidocSignatureSpan">yadda.</span>Context
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Context = function (properties) {
+
+    // I was previously getting some weird errors using instanceof to determine if
+    // the "other" object was a context object. Using pTFUHht733hM6wfnruGLgAu6Uqvy7MVp instead
+    this.pTFUHht733hM6wfnruGLgAu6Uqvy7MVp = true;
+    this.properties = {};
+
+    this.merge = function(other) {
+        if (other &amp;&amp; other.pTFUHht733hM6wfnruGLgAu6Uqvy7MVp) return this.merge(other.properties);
+        return new Context(this.properties)._merge(other);
+    };
+
+    this._merge = function(other) {
+        for (var key in other) { this.properties[key] = other[key]; }
+        return this;
+    };
+
+    this._merge(properties);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.Dictionary" id="apidoc.element.yadda.Dictionary">
+        function <span class="apidocSignatureSpan">yadda.</span>Dictionary
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Dictionary = function (prefix) {
+
+    // eslint-disable-next-line no-redeclare
+    var prefix = prefix || '$';
+    var definitions = {};
+    var term_grouping_pattern = new RegularExpression(new RegExp('(?:^|[^\\\\])\\' + prefix + '(\\w+)', 'g'));
+    var term_splitting_pattern = new RegExp('(\\' + prefix + '\\w+)');
+    var _this = this;
+
+    this.define = function(term, pattern, converters) {
+        if (is_defined(term)) throw new Error('Duplicate term: [' + term + ']');
+        if (converters &amp;&amp; is_expandable(pattern)) throw new Error('Expandable terms cannot use converters: [' + term + ']');
+        if (converters &amp;&amp; !is_compatible(converters, pattern)) throw new Error('Wrong number of converters for: [' + term + ']');
+
+        if (!is_expandable(pattern) &amp;&amp; !converters) converters = get_matching_group_converters(pattern);
+        definitions[term] = { pattern: normalise(pattern), converters: $(converters) };
+        return this;
+    };
+
+    this.merge = function(other) {
+        if (other._prefix() !== this._prefix()) throw new Error('Cannot merge dictionaries with different prefixes');
+        return new Dictionary(prefix)._merge(this)._merge(other);
+    };
+
+    this._merge = function(other) {
+        other.each(function(term, definition) {
+            _this.define(term, definition.pattern);
+        });
+        return this;
+    };
+
+    this._prefix = function() {
+        return prefix;
+    };
+
+    this.each = function(callback) {
+        for (var term in definitions) {
+            callback(term, definitions[term]);
+        }
+    };
+
+    this.expand = function(signature, already_expanding) {
+        var text = normalise(signature);
+        return is_expandable(text) ? { pattern: expand_sub_terms(text, $(already_expanding)), converters: get_converters(text) }
+                                   : { pattern: text, converters: get_converters(text) };
+    };
+
+    function expand_sub_terms(text, already_expanding) {
+        return get_sub_terms(text).each(function(sub_term) {
+            if (already_expanding.in_array(sub_term)) throw new Error('Circular Definition: [' + already_expanding.join(', ') + ']');
+            var sub_term_grouping_pattern = expand_sub_term(sub_term, already_expanding);
+            text = text.replace(prefix + sub_term, sub_term_grouping_pattern);
+            return text;
+        });
+    }
+
+    function get_sub_terms(text) {
+        return term_grouping_pattern.groups(text);
+    }
+
+    function expand_sub_term(sub_term, already_expanding) {
+        var pattern = definitions[sub_term] ? definitions[sub_term].pattern : '(.+)';
+        return is_expandable(pattern) ? _this.expand(pattern, already_expanding.concat(sub_term)).pattern : pattern;
+    }
+
+    function normalise(pattern) {
+        return pattern.toString().replace(/^\/|\/$/g, '');
+    }
+
+    function is_defined(term) {
+        return !!definitions[term];
+    }
+
+    function is_expandable(text) {
+        return term_grouping_pattern.test(text);
+    }
+
+    function is_compatible(converters, pattern) {
+        return count_converter_arguments(converters) === count_matching_groups(pattern);
+    }
+
+    function get_converters(text) {
+        return $(text.split(term_splitting_pattern)).inject($(), function(converters, fragment) {
+            return converters.push_all(is_expandable(fragment) ? get_sub_term_converters(fragment)
+                                                               : get_matching_group_converters(fragment));
+        });
+    }
+
+    function get_matching_group_converters(text) {
+        return $().fill(pass_through_converter, count_matching_groups(text));
+    }
+
+    function get_sub_term_converters(text) {
+        return get_sub_terms(text).inject($(), function(converters, sub_term) {
+            return is_defined(sub_term) ? converters.push_all(definitions[sub_term].converters)
+                                        : converters.push_all(get_converters(expand_sub_term(sub_term, [])));
+        });
+    }
+
+    function count_matching_groups(pattern) {
+        return new RegExp(pattern + '|').exec('').length - 1;
+    }
+
+    function cou ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.FeatureFileSearch" id="apidoc.element.yadda.FeatureFileSearch">
+        function <span class="apidocSignatureSpan">yadda.</span>FeatureFileSearch
+        <span class="apidocSignatureSpan">(directories)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FeatureFileSearch = function (directories) {
+    this.constructor(directories, /.*\.(?:feature|spec|specification)$/);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Step 4 - Integrate Yadda with your testing framework (e.g. Mocha)
+./bottles-test.js
+```js
+var Yadda = require('yadda');
+Yadda.plugins.mocha.StepLevelPlugin.init();
+
+new Yadda.<span class="apidocCodeKeywordSpan">FeatureFileSearch</span>('./test/features').each(function(file) {
+
+  featureFile(file, function(feature) {
+
+var library = require('./test/steps/bottles-library');
+var yadda = Yadda.createInstance(library);
+
+scenarios(feature.scenarios, function(scenario) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.FileSearch" id="apidoc.element.yadda.FileSearch">
+        function <span class="apidocSignatureSpan">yadda.</span>FileSearch
+        <span class="apidocSignatureSpan">(directories, patterns)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FileSearch = function (directories, patterns) {
+
+    // eslint-disable-next-line no-redeclare
+    var patterns = patterns || /.*/;
+
+    this.each = function(fn) {
+        this.list().forEach(fn);
+    };
+
+    this.list = function() {
+        return $(directories).inject($(), function(files, directory) {
+            return files.concat(list_files(directory).find_all(by_pattern));
+        });
+    };
+
+    var list_files = function(directory) {
+        return $(list_immediate_files(directory).concat(list_sub_directory_files(directory)));
+    };
+
+    var list_immediate_files = function(directory) {
+        return ls(directory).find_all(by_file);
+    };
+
+    var list_sub_directory_files = function(directory) {
+        return ls(directory).find_all(by_directory).inject($(), function(files, directory) {
+            return files.concat(list_files(directory));
+        });
+    };
+
+    var ls = function(directory) {
+        if (!fs.existsSync(directory)) return $();
+        return $(fs.readdirSync(directory)).collect(function(file) {
+            return path.join(directory, file);
+        });
+    };
+
+    var by_file = function(file) {
+        return !by_directory(file);
+    };
+
+    var by_directory = function(file) {
+        return fs.statSync(file).isDirectory();
+    };
+
+    var by_pattern = function(filename) {
+        return $(patterns).find(function(pattern) {
+            return new RegExp(pattern).test(filename);
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.Interpreter" id="apidoc.element.yadda.Interpreter">
+        function <span class="apidocSignatureSpan">yadda.</span>Interpreter
+        <span class="apidocSignatureSpan">(libraries)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Interpreter = function (libraries) {
+
+    // eslint-disable-next-line no-redeclare
+    var libraries = $(libraries);
+    var event_bus = EventBus.instance();
+    var last_macro;
+    var _this = this;
+
+    this.requires = function(libraries) {
+        libraries.push_all(libraries);
+        return this;
+    };
+
+    this.validate = function(scenario) {
+        var results = $(scenario).collect(function(step) {
+            var report = _this.rank_macros(step).validate();
+            last_macro = report.winner;
+            return report;
+        });
+        if (results.find(by_invalid_step)) throw new Error('Scenario cannot be interpreted\n' + results.collect(validation_report
+).join('\n'));
+    };
+
+    function by_invalid_step(result) {
+        return !result.valid;
+    }
+
+    function validation_report(result) {
+        return result.step + (result.valid ? '' : ' &lt;-- ' + result.reason);
+    }
+
+    this.interpret = function(scenario, scenario_context, next) {
+        scenario_context = new Context().merge(scenario_context);
+        event_bus.send(EventBus.ON_SCENARIO, { scenario: scenario, ctx: scenario_context.properties });
+        var iterator = make_step_iterator(scenario_context, next);
+        $(scenario).each_async(iterator, next);
+    };
+
+    var make_step_iterator = function(scenario_context, next) {
+        var iterator = function(step, index, callback) {
+            _this.interpret_step(step, scenario_context, callback);
+        };
+        return next ? iterator : fn.asynchronize(null, iterator);
+    };
+
+    this.interpret_step = function(step, scenario_context, next) {
+        var context = new Context().merge(scenario_context);
+        event_bus.send(EventBus.ON_STEP, { step: step, ctx: context.properties });
+        var macro = this.rank_macros(step).clear_winner();
+        last_macro = macro;
+        macro.interpret(step, context || {}, next);
+    };
+
+    this.rank_macros = function(step) {
+        return new Competition(step, compatible_macros(step), last_macro);
+    };
+
+    var compatible_macros = function(step) {
+        return libraries.inject([], function(macros, library) {
+            return macros.concat(library.find_compatible_macros(step));
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.Library" id="apidoc.element.yadda.Library">
+        function <span class="apidocSignatureSpan">yadda.</span>Library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Library = function (dictionary) {
+
+    // eslint-disable-next-line no-redeclare
+    var dictionary = dictionary || new Dictionary();
+    var macros = $();
+    var _this = this;
+
+    this.define = function(signatures, fn, macro_context, options) {
+        $(signatures).each(function(signature) {
+            define_macro(signature, fn, macro_context, options);
+        });
+        return this;
+    };
+
+    var define_macro = function(signature, fn, macro_context, options) {
+        if (_this.get_macro(signature)) throw new Error('Duplicate macro: [' + signature + ']');
+        macros.push(new Macro(signature, dictionary.expand(signature), fn, macro_context, _this, options));
+    };
+
+    this.get_macro = function(signature) {
+        return macros.find(function(other_macro) {
+            return other_macro.is_identified_by(signature);
+        });
+    };
+
+    this.find_compatible_macros = function(step) {
+        return macros.find_all(function(macro) {
+            return macro.can_interpret(step);
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.Platform" id="apidoc.element.yadda.Platform">
+        function <span class="apidocSignatureSpan">yadda.</span>Platform
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Platform() {
+
+    function get_container() {
+<span class="apidocCodeCommentSpan">        /* eslint-disable no-undef */
+</span>        if (is_browser()) return window;
+        if (is_phantom()) return phantom;
+        if (is_node()) return global;
+        /* eslint-enable no-undef */
+    }
+
+    function is_node() {
+        return typeof process !== 'undefined' &amp;&amp;
+               typeof global !== 'undefined' &amp;&amp;
+               typeof __dirname !== 'undefined';
+    }
+
+    function is_browser() {
+        return typeof window !== 'undefined';
+    }
+
+    function is_phantom() {
+        return typeof phantom !== 'undefined';
+    }
+
+    function is_karma() {
+        return typeof window !== 'undefined' &amp;&amp; typeof window.__karma__ !== 'undefined';
+    }
+
+    return {
+        get_container: get_container,
+        is_node: is_node,
+        is_browser: is_browser,
+        is_phantom: is_phantom,
+        is_karma: is_karma
+    };
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.Yadda" id="apidoc.element.yadda.Yadda">
+        function <span class="apidocSignatureSpan">yadda.</span>Yadda
+        <span class="apidocSignatureSpan">(libraries, interpreter_context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Yadda = function (libraries, interpreter_context) {
+
+    if (!(this instanceof Yadda)) {
+        return new Yadda(libraries, interpreter_context);
+    }
+
+    this.interpreter = new Interpreter(libraries);
+
+    this.requires = function(libraries) {
+        this.interpreter.requires(libraries);
+        return this;
+    };
+
+    this.yadda = function(scenario, scenario_context, next) {
+        if (arguments.length === 0) return this;
+        if (arguments.length === 2 &amp;&amp; fn.is_function(scenario_context)) return this.yadda(scenario, {}, scenario_context);
+        this.interpreter.validate(scenario);
+        this.interpreter.interpret(scenario, new Context().merge(interpreter_context).merge(scenario_context), next);
+    };
+
+    // Not everyone shares my sense of humour re the recursive api :(
+    // See https://github.com/acuminous/yadda/issues/111
+    this.run = this.yadda;
+
+    this.toString = function() {
+        return "Yadda 1.3.0 Copyright 2010 Stephen Cresswell / Energized Work Ltd";
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.createInstance" id="apidoc.element.yadda.createInstance">
+        function <span class="apidocSignatureSpan">yadda.</span>createInstance
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createInstance = function () {
+    // Not everyone shares my sense of humour re the recursive api :(
+    // See https://github.com/acuminous/yadda/issues/111
+    return api.Yadda.apply(null, Array.prototype.slice.call(arguments, 0));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Yadda.plugins.mocha.StepLevelPlugin.init();
+
+new Yadda.FeatureFileSearch('./test/features').each(function(file) {
+
+featureFile(file, function(feature) {
+
+  var library = require('./test/steps/bottles-library');
+  var yadda = Yadda.<span class="apidocCodeKeywordSpan">createInstance</span>(library);
+
+  scenarios(feature.scenarios, function(scenario) {
+    steps(scenario.steps, function(step, done) {
+      yadda.run(step, done);
+    });
+  });
+});
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.BasePlugin" id="apidoc.module.yadda.BasePlugin">module yadda.BasePlugin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.BasePlugin.create" id="apidoc.element.yadda.BasePlugin.create">
+        function <span class="apidocSignatureSpan">yadda.BasePlugin.</span>create
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (options) {
+
+<span class="apidocCodeCommentSpan">    /* jslint shadow: true */
+</span>    var platform = new Platform();
+    var language = options.language || Localisation.default;
+    var parser = options.parser || new FeatureFileParser(language);
+    var container = options.container || platform.get_container();
+
+    function featureFiles(files, iterator) {
+        $(files).each(function(file) {
+            features(parser.parse(file), iterator);
+        });
+    }
+
+    function features(features, iterator) {
+        $(features).each(function(feature) {
+            describe(feature.title, feature, iterator);
+        });
+    }
+
+    function describe(title, subject, iterator) {
+        var _describe = getDescribe(subject.annotations);
+        _describe(title, function() {
+            iterator(subject);
+        });
+    }
+
+    function it_async(title, subject, iterator) {
+        var _it = getIt(subject.annotations);
+        _it(title, function(done) {
+            iterator(this, subject, done);
+        });
+    }
+
+    function it_sync(title, subject, iterator) {
+        var _it = getIt(subject.annotations);
+        _it(title, function() {
+            iterator(this, subject);
+        });
+    }
+
+    function getIt(annotations, next) {
+        if (has_annotation(annotations, 'pending')) return container.xit;
+        if (has_annotation(annotations, 'only')) return container.it.only || container.fit || container.iit;
+        return container.it;
+    }
+
+    function getDescribe(annotations, next) {
+        if (has_annotation(annotations, 'pending')) return container.xdescribe;
+        if (has_annotation(annotations, 'only')) return container.describe.only || container.fdescribe || container.ddescribe;
+        return container.describe;
+    }
+
+    function has_annotation(annotations, name) {
+        var regexp = new RegExp('^' + language.localise(name) + '$', 'i');
+        for (var key in annotations) {
+            if (regexp.test(key)) return true;
+        }
+    }
+
+    return {
+        featureFiles: featureFiles,
+        features: features,
+        describe: describe,
+        it_async: it_async,
+        it_sync: it_sync
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports.init = function(options) {
+
+// eslint-disable-next-line no-redeclare
+var options = options || {};
+var platform = new Platform();
+var container = options.container || platform.get_container();
+
+var base_plugin = BasePlugin.<span class="apidocCodeKeywordSpan">create</span>(options);
+
+function scenarios(scenarios, iterator) {
+    $(scenarios).each(function(scenario) {
+        var itFn = iterator.length === 1 ? base_plugin.it_sync : base_plugin.it_async;
+        itFn(scenario.title, scenario, function(context, scenario, done) {
+            iterator(scenario, done);
+        });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.EventBus" id="apidoc.module.yadda.EventBus">module yadda.EventBus</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.EventBus.instance" id="apidoc.element.yadda.EventBus.instance">
+        function <span class="apidocSignatureSpan">yadda.EventBus.</span>instance
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function instance() {
+    return event_bus;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var fn = require('./fn');
+
+// Understands a scenario
+var Interpreter = function(libraries) {
+
+// eslint-disable-next-line no-redeclare
+var libraries = $(libraries);
+var event_bus = EventBus.<span class="apidocCodeKeywordSpan">instance</span>();
+var last_macro;
+var _this = this;
+
+this.requires = function(libraries) {
+    libraries.push_all(libraries);
+    return this;
+};
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.FeatureFileSearch" id="apidoc.module.yadda.FeatureFileSearch">module yadda.FeatureFileSearch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.FeatureFileSearch.FeatureFileSearch" id="apidoc.element.yadda.FeatureFileSearch.FeatureFileSearch">
+        function <span class="apidocSignatureSpan">yadda.</span>FeatureFileSearch
+        <span class="apidocSignatureSpan">(directories)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FeatureFileSearch = function (directories) {
+    this.constructor(directories, /.*\.(?:feature|spec|specification)$/);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Step 4 - Integrate Yadda with your testing framework (e.g. Mocha)
+./bottles-test.js
+```js
+var Yadda = require('yadda');
+Yadda.plugins.mocha.StepLevelPlugin.init();
+
+new Yadda.<span class="apidocCodeKeywordSpan">FeatureFileSearch</span>('./test/features').each(function(file) {
+
+  featureFile(file, function(feature) {
+
+var library = require('./test/steps/bottles-library');
+var yadda = Yadda.createInstance(library);
+
+scenarios(feature.scenarios, function(scenario) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.FeatureFileSearch.prototype" id="apidoc.module.yadda.FeatureFileSearch.prototype">module yadda.FeatureFileSearch.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.FeatureFileSearch.prototype.each" id="apidoc.element.yadda.FeatureFileSearch.prototype.each">
+        function <span class="apidocSignatureSpan">yadda.FeatureFileSearch.prototype.</span>each
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">each = function (fn) {
+    this.list().forEach(fn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Step 4 - Integrate Yadda with your testing framework (e.g. Mocha)
+./bottles-test.js
+```js
+var Yadda = require('yadda');
+Yadda.plugins.mocha.StepLevelPlugin.init();
+
+new Yadda.FeatureFileSearch('./test/features').<span class="apidocCodeKeywordSpan">each</span>(function(file) {
+
+  featureFile(file, function(feature) {
+
+var library = require('./test/steps/bottles-library');
+var yadda = Yadda.createInstance(library);
+
+scenarios(feature.scenarios, function(scenario) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.FeatureFileSearch.prototype.list" id="apidoc.element.yadda.FeatureFileSearch.prototype.list">
+        function <span class="apidocSignatureSpan">yadda.FeatureFileSearch.prototype.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function () {
+    return $(directories).inject($(), function(files, directory) {
+        return files.concat(list_files(directory).find_all(by_pattern));
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Searches for files in the given directories and their sub-directories, matching at least one of the given patterns
+var FileSearch = function(directories, patterns) {
+
+// eslint-disable-next-line no-redeclare
+var patterns = patterns || /.*/;
+
+this.each = function(fn) {
+    this.<span class="apidocCodeKeywordSpan">list</span>().forEach(fn);
+};
+
+this.list = function() {
+    return $(directories).inject($(), function(files, directory) {
+        return files.concat(list_files(directory).find_all(by_pattern));
+    });
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.ScenarioLevelPlugin" id="apidoc.module.yadda.ScenarioLevelPlugin">module yadda.ScenarioLevelPlugin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.ScenarioLevelPlugin.init" id="apidoc.element.yadda.ScenarioLevelPlugin.init">
+        function <span class="apidocSignatureSpan">yadda.ScenarioLevelPlugin.</span>init
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options) {
+
+    // eslint-disable-next-line no-redeclare
+    var options = options || {};
+    var platform = new Platform();
+    var container = options.container || platform.get_container();
+
+    var base_plugin = BasePlugin.create(options);
+
+    function scenarios(scenarios, iterator) {
+        $(scenarios).each(function(scenario) {
+            var itFn = iterator.length === 1 ? base_plugin.it_sync : base_plugin.it_async;
+            itFn(scenario.title, scenario, function(context, scenario, done) {
+                iterator(scenario, done);
+            });
+        });
+    }
+
+    container.featureFiles = container.featureFile = base_plugin.featureFiles;
+    container.features = container.feature = base_plugin.features;
+    container.scenarios = container.scenario = scenarios;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+(If your test runner &amp; code are synchronous you can omit the calls to 'next')
+
+### Step 4 - Integrate Yadda with your testing framework (e.g. Mocha)
+./bottles-test.js
+```js
+var Yadda = require('yadda');
+Yadda.plugins.mocha.StepLevelPlugin.<span class="apidocCodeKeywordSpan">init</span>();
+
+new Yadda.FeatureFileSearch('./test/features').each(function(file) {
+
+  featureFile(file, function(feature) {
+
+var library = require('./test/steps/bottles-library');
+var yadda = Yadda.createInstance(library);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.StepLevelPlugin" id="apidoc.module.yadda.StepLevelPlugin">module yadda.StepLevelPlugin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.StepLevelPlugin.init" id="apidoc.element.yadda.StepLevelPlugin.init">
+        function <span class="apidocSignatureSpan">yadda.StepLevelPlugin.</span>init
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options) {
+
+    // eslint-disable-next-line no-redeclare
+    var options = options || {};
+    var platform = new Platform();
+    var container = options.container || platform.get_container();
+
+    var base_plugin = BasePlugin.create(options);
+
+    function scenarios(scenarios, iterator) {
+        $(scenarios).each(function(scenario) {
+            base_plugin.describe(scenario.title, scenario, iterator);
+        });
+    }
+
+    function steps(steps, iterator) {
+
+        var abort = false;
+
+        $(steps).each(function(step) {
+            var stepFn = iterator.length === 1 ? step_sync : step_async;
+            stepFn(step, iterator);
+        });
+
+        function step_async(step, iterator) {
+            base_plugin.it_async(step, step, function(context, step, done) {
+                if (abort) {
+                    return context.skip ? context.skip() : done();
+                }
+                abort = true;
+                iterator(step, function(err) {
+                    if (err) return (done.fail || done)(err);
+                    abort = false;
+                    done();
+                });
+            });
+        }
+
+        function step_sync(step, iterator) {
+            base_plugin.it_sync(step, step, function(context, step) {
+                if (abort) return context.skip &amp;&amp; context.skip();
+                abort = true;
+                iterator(step);
+                abort = false;
+            });
+        }
+    }
+
+    container.featureFiles = container.featureFile = base_plugin.featureFiles;
+    container.features = container.feature = base_plugin.features;
+    container.scenarios = container.scenario = scenarios;
+    container.steps = steps;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+(If your test runner &amp; code are synchronous you can omit the calls to 'next')
+
+### Step 4 - Integrate Yadda with your testing framework (e.g. Mocha)
+./bottles-test.js
+```js
+var Yadda = require('yadda');
+Yadda.plugins.mocha.StepLevelPlugin.<span class="apidocCodeKeywordSpan">init</span>();
+
+new Yadda.FeatureFileSearch('./test/features').each(function(file) {
+
+  featureFile(file, function(feature) {
+
+var library = require('./test/steps/bottles-library');
+var yadda = Yadda.createInstance(library);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.StringUtils" id="apidoc.module.yadda.StringUtils">module yadda.StringUtils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.StringUtils.indentation" id="apidoc.element.yadda.StringUtils.indentation">
+        function <span class="apidocSignatureSpan">yadda.StringUtils.</span>indentation
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function indentation(text) {
+    var match = /^(\s*)/.exec(text);
+    return match &amp;&amp; match[0].length || 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function handle_multiline_row(row) {
+    if (is_horizinal_separator(row)) return start_new_row();
+    parse_fields(row);
+}
+
+function parse_headings(row) {
+    return $(row.replace(OUTER_BORDERS_REGEX, '').split(COLUMN_SEPARATOR_REGEX)).collect(function(value) {
+        return { text: StringUtils.trim(value), indentation: StringUtils.<span class="apidocCodeKeywordSpan">indentation</span>(
+value) };
+    }).naked();
+}
+
+function is_horizinal_separator(row) {
+    return DASH_REGEX.test(row);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.StringUtils.isBlank" id="apidoc.element.yadda.StringUtils.isBlank">
+        function <span class="apidocSignatureSpan">yadda.StringUtils.</span>isBlank
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBlank(text) {
+    return /^\s*$/g.test(text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    rtrim: function rtrim(text) {
+        return text.replace(/\s+$/g, '');
+    },
+    isBlank: function isBlank(text) {
+        return /^\s*$/g.test(text);
+    },
+    isNotBlank: function isNotBlank(text) {
+        return !this.<span class="apidocCodeKeywordSpan">isBlank</span>(text);
+    },
+    indentation: function indentation(text) {
+        var match = /^(\s*)/.exec(text);
+        return match &amp;&amp; match[0].length || 0;
+    }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.StringUtils.isNotBlank" id="apidoc.element.yadda.StringUtils.isNotBlank">
+        function <span class="apidocSignatureSpan">yadda.StringUtils.</span>isNotBlank
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNotBlank(text) {
+    return !this.isBlank(text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function parse_fields(row) {
+    var fields = table.last();
+    $(row.replace(OUTER_BORDERS_REGEX, '').split(COLUMN_SEPARATOR_REGEX)).each(function(field, index) {
+        var column = headings[index].text;
+        var indentation = headings[index].indentation;
+        var text = StringUtils.rtrim(field.substr(indentation));
+        if (StringUtils.<span class="apidocCodeKeywordSpan">isNotBlank</span>(field) &amp;&amp; StringUtils.indentation(field) &amp;#
+x3c; indentation) throw new Error('Indentation error');
+        fields[column] = (fields[column] || []).concat(text);
+    });
+}
+
+function collapse(table) {
+    return table.collect(function(row) {
+        var new_row = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.StringUtils.rtrim" id="apidoc.element.yadda.StringUtils.rtrim">
+        function <span class="apidocSignatureSpan">yadda.StringUtils.</span>rtrim
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rtrim(text) {
+    return text.replace(/\s+$/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function parse_fields(row) {
+    var fields = table.last();
+    $(row.replace(OUTER_BORDERS_REGEX, '').split(COLUMN_SEPARATOR_REGEX)).each(function(field, index) {
+        var column = headings[index].text;
+        var indentation = headings[index].indentation;
+        var text = StringUtils.<span class="apidocCodeKeywordSpan">rtrim</span>(field.substr(indentation));
+        if (StringUtils.isNotBlank(field) &amp;&amp; StringUtils.indentation(field) &lt; indentation) throw new Error('
+Indentation error');
+        fields[column] = (fields[column] || []).concat(text);
+    });
+}
+
+function collapse(table) {
+    return table.collect(function(row) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.StringUtils.trim" id="apidoc.element.yadda.StringUtils.trim">
+        function <span class="apidocSignatureSpan">yadda.StringUtils.</span>trim
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function trim(text) {
+    return text.replace(/^\s+|\s+$/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function handle_multiline_row(row) {
+    if (is_horizinal_separator(row)) return start_new_row();
+    parse_fields(row);
+}
+
+function parse_headings(row) {
+    return $(row.replace(OUTER_BORDERS_REGEX, '').split(COLUMN_SEPARATOR_REGEX)).collect(function(value) {
+        return { text: StringUtils.<span class="apidocCodeKeywordSpan">trim</span>(value), indentation: StringUtils.indentation(
+value) };
+    }).naked();
+}
+
+function is_horizinal_separator(row) {
+    return DASH_REGEX.test(row);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.converters" id="apidoc.module.yadda.converters">module yadda.converters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.converters.date" id="apidoc.element.yadda.converters.date">
+        function <span class="apidocSignatureSpan">yadda.converters.</span>date
+        <span class="apidocSignatureSpan">(value, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function date_converter(value, next) {
+    var converted = Date.parse(value);
+    if (isNaN(converted)) return next(new Error('Cannot convert [' + value + '] to a date'));
+    return next(null, new Date(converted));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.converters.float" id="apidoc.element.yadda.converters.float">
+        function <span class="apidocSignatureSpan">yadda.converters.</span>float
+        <span class="apidocSignatureSpan">(value, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function float_converter(value, next) {
+    var converted = parseFloat(value);
+    if (isNaN(converted)) return next(new Error('Cannot convert [' + value + '] to a float'));
+    return next(null, converted);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.converters.integer" id="apidoc.element.yadda.converters.integer">
+        function <span class="apidocSignatureSpan">yadda.converters.</span>integer
+        <span class="apidocSignatureSpan">(value, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function integer_converter(value, next) {
+    var converted = parseInt(value);
+    if (isNaN(converted)) return next(new Error('Cannot convert [' + value + '] to an integer'));
+    return next(null, converted);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.converters.list" id="apidoc.element.yadda.converters.list">
+        function <span class="apidocSignatureSpan">yadda.converters.</span>list
+        <span class="apidocSignatureSpan">(value, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function list_converter(value, next) {
+    return next(null, value.split(/\n/));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Searches for files in the given directories and their sub-directories, matching at least one of the given patterns
+var FileSearch = function(directories, patterns) {
+
+// eslint-disable-next-line no-redeclare
+var patterns = patterns || /.*/;
+
+this.each = function(fn) {
+    this.<span class="apidocCodeKeywordSpan">list</span>().forEach(fn);
+};
+
+this.list = function() {
+    return $(directories).inject($(), function(files, directory) {
+        return files.concat(list_files(directory).find_all(by_pattern));
+    });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.converters.pass_through" id="apidoc.element.yadda.converters.pass_through">
+        function <span class="apidocSignatureSpan">yadda.converters.</span>pass_through
+        <span class="apidocSignatureSpan">(value, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pass_through_converter(value, next) {
+    return next(null, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.converters.table" id="apidoc.element.yadda.converters.table">
+        function <span class="apidocSignatureSpan">yadda.converters.</span>table
+        <span class="apidocSignatureSpan">(value, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function table_converter(value, next) {
+
+    var rows = value.split(/\n/);
+    var headings = parse_headings(rows.shift());
+    var handler =  is_horizinal_separator(rows[0]) ? handle_multiline_row : handle_single_line_row;
+    var table = $();
+
+    try {
+        $(rows).each(handler);
+        next(null, collapse(table));
+    } catch(err) {
+        next(err);
+    }
+
+    function handle_single_line_row(row) {
+        if (is_horizinal_separator(row)) throw new Error('Dashes are unexpected at this time');
+        start_new_row();
+        parse_fields(row);
+    }
+
+    function handle_multiline_row(row) {
+        if (is_horizinal_separator(row)) return start_new_row();
+        parse_fields(row);
+    }
+
+    function parse_headings(row) {
+        return $(row.replace(OUTER_BORDERS_REGEX, '').split(COLUMN_SEPARATOR_REGEX)).collect(function(value) {
+            return { text: StringUtils.trim(value), indentation: StringUtils.indentation(value) };
+        }).naked();
+    }
+
+    function is_horizinal_separator(row) {
+        return DASH_REGEX.test(row);
+    }
+
+    function start_new_row() {
+        table.push({});
+    }
+
+    function parse_fields(row) {
+        var fields = table.last();
+        $(row.replace(OUTER_BORDERS_REGEX, '').split(COLUMN_SEPARATOR_REGEX)).each(function(field, index) {
+            var column = headings[index].text;
+            var indentation = headings[index].indentation;
+            var text = StringUtils.rtrim(field.substr(indentation));
+            if (StringUtils.isNotBlank(field) &amp;&amp; StringUtils.indentation(field) &lt; indentation) throw new Error('Indentation error
+');
+            fields[column] = (fields[column] || []).concat(text);
+        });
+    }
+
+    function collapse(table) {
+        return table.collect(function(row) {
+            var new_row = {};
+            for (var heading in row) {
+                new_row[heading] = row[heading].join('\n');
+            }
+            return new_row;
+        }).naked();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.fn" id="apidoc.module.yadda.fn">module yadda.fn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.fn.async_noop" id="apidoc.element.yadda.fn.async_noop">
+        function <span class="apidocSignatureSpan">yadda.fn.</span>async_noop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async_noop = function () {
+    var next = slice.call(arguments, arguments.length - 1)[0];
+    var args = slice.call(arguments, 0, arguments.length - 2);
+    fn.apply(ctx, args);
+    if (next) next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.fn.asynchronize" id="apidoc.element.yadda.fn.asynchronize">
+        function <span class="apidocSignatureSpan">yadda.fn.</span>asynchronize
+        <span class="apidocSignatureSpan">(ctx, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function asynchronize(ctx, fn) {
+    return function() {
+        var next = slice.call(arguments, arguments.length - 1)[0];
+        var args = slice.call(arguments, 0, arguments.length - 2);
+        fn.apply(ctx, args);
+        if (next) next();
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    $(scenario).each_async(iterator, next);
+};
+
+var make_step_iterator = function(scenario_context, next) {
+    var iterator = function(step, index, callback) {
+        _this.interpret_step(step, scenario_context, callback);
+    };
+    return next ? iterator : fn.<span class="apidocCodeKeywordSpan">asynchronize</span>(null, iterator);
+};
+
+this.interpret_step = function(step, scenario_context, next) {
+    var context = new Context().merge(scenario_context);
+    event_bus.send(EventBus.ON_STEP, { step: step, ctx: context.properties });
+    var macro = this.rank_macros(step).clear_winner();
+    last_macro = macro;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.fn.curry" id="apidoc.element.yadda.fn.curry">
+        function <span class="apidocSignatureSpan">yadda.fn.</span>curry
+        <span class="apidocSignatureSpan">(ctx, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function curry(ctx, fn) {
+    var args = slice.call(arguments, 2);
+    return function() {
+        return fn.apply(ctx, args.concat(slice.call(arguments)));
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var fn = require('./fn');
+
+module.exports = function(obj) {
+
+function ensure_array(obj) {
+    var array = obj ? [].concat(obj) : [];
+    array.in_array = fn.<span class="apidocCodeKeywordSpan">curry</span>(array, in_array, array);
+    array.each = fn.curry(array, each, array);
+    array.each_async = fn.curry(array, each_async, array);
+    array.collect = fn.curry(array, collect, array);
+    array.collect_async = fn.curry(array, collect_async, array);
+    array.flatten = fn.curry(array, flatten, array);
+    array.inject = fn.curry(array, inject, array);
+    array.push_all = fn.curry(array, push_all, array);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.fn.invoke" id="apidoc.element.yadda.fn.invoke">
+        function <span class="apidocSignatureSpan">yadda.fn.</span>invoke
+        <span class="apidocSignatureSpan">(fn, ctx, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function invoke(fn, ctx, args) {
+    return fn.apply(ctx, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.interpret = function(step, scenario_context, next) {
+var context = new Context({step:step}).merge(macro_context).merge(scenario_context);
+convert(signature_pattern.groups(step), function(err, args) {
+    if (err) return next(err);
+    event_bus.send(EventBus.ON_EXECUTE, { step: step, ctx: context.properties, pattern: signature_pattern.toString(), args: args
+ });
+    var result;
+    try {
+        result = fn.<span class="apidocCodeKeywordSpan">invoke</span>(macro, context.properties, is_sync(args) ? args : args.concat
+(next));
+    } catch (err) {
+        if (next) return next(err);
+        throw err;
+    }
+    if (is_promise(result)) return result.then(fn.noargs(next)).catch(next);
+    if (is_sync(args)) return next &amp;&amp; next();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.fn.is_function" id="apidoc.element.yadda.fn.is_function">
+        function <span class="apidocSignatureSpan">yadda.fn.</span>is_function
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function is_function(object) {
+    var getType = {};
+    return object &amp;&amp; getType.toString.call(object) === '[object Function]';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.requires = function(libraries) {
+    this.interpreter.requires(libraries);
+    return this;
+};
+
+this.yadda = function(scenario, scenario_context, next) {
+    if (arguments.length === 0) return this;
+    if (arguments.length === 2 &amp;&amp; fn.<span class="apidocCodeKeywordSpan">is_function</span>(scenario_context)) return
+this.yadda(scenario, {}, scenario_context);
+    this.interpreter.validate(scenario);
+    this.interpreter.interpret(scenario, new Context().merge(interpreter_context).merge(scenario_context), next);
+};
+
+// Not everyone shares my sense of humour re the recursive api :(
+// See https://github.com/acuminous/yadda/issues/111
+this.run = this.yadda;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.fn.noargs" id="apidoc.element.yadda.fn.noargs">
+        function <span class="apidocSignatureSpan">yadda.fn.</span>noargs
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noargs(fn) {
+    return function() {
+        return fn();
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        var result;
+        try {
+            result = fn.invoke(macro, context.properties, is_sync(args) ? args : args.concat(next));
+        } catch (err) {
+            if (next) return next(err);
+            throw err;
+        }
+        if (is_promise(result)) return result.then(fn.<span class="apidocCodeKeywordSpan">noargs</span>(next)).catch(next);
+        if (is_sync(args)) return next &amp;&amp; next();
+    });
+};
+
+this.is_sibling = function(other_macro) {
+    return other_macro &amp;&amp; other_macro.defined_in(library);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.fn.noop" id="apidoc.element.yadda.fn.noop">
+        function <span class="apidocSignatureSpan">yadda.fn.</span>noop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noop() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation" id="apidoc.module.yadda.localisation">module yadda.localisation</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Language" id="apidoc.element.yadda.localisation.Language">
+        function <span class="apidocSignatureSpan">yadda.localisation.</span>Language
+        <span class="apidocSignatureSpan">(name, vocabulary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Language = function (name, vocabulary) {
+
+    var _this = this;
+
+    // See http://github.com/acuminous/yadda#203
+    this.is_language = true;
+
+    this.library = function(dictionary) {
+        return _this.localise_library(new Library(dictionary));
+    };
+
+    this.localise_library = function(library) {
+        $(vocabulary._steps).each(function(keyword) {
+            library[keyword] = function(signatures, fn, ctx, options) {
+                return $(signatures).each(function(signature) {
+                    signature = prefix_signature(_this.localise(keyword), signature);
+                    return library.define(signature, fn, ctx, options);
+                });
+            };
+        });
+        return library;
+    };
+
+    var prefix_signature = function(prefix, signature) {
+        var regex_delimiters = new RegExp('^/|/$', 'g');
+        var start_of_signature = new RegExp(/^(?:\^)?/);
+        var one_or_more_spaces = '\\s+';
+        return signature.toString().replace(regex_delimiters, '').replace(start_of_signature, prefix + one_or_more_spaces);
+    };
+
+    this.localise = function(keyword) {
+        if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+        return vocabulary[keyword];
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Chinese" id="apidoc.module.yadda.localisation.Chinese">module yadda.localisation.Chinese</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Chinese.library" id="apidoc.element.yadda.localisation.Chinese.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Chinese.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Chinese.localise" id="apidoc.element.yadda.localisation.Chinese.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Chinese.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Chinese.localise_library" id="apidoc.element.yadda.localisation.Chinese.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Chinese.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Dutch" id="apidoc.module.yadda.localisation.Dutch">module yadda.localisation.Dutch</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Dutch.library" id="apidoc.element.yadda.localisation.Dutch.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Dutch.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Dutch.localise" id="apidoc.element.yadda.localisation.Dutch.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Dutch.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Dutch.localise_library" id="apidoc.element.yadda.localisation.Dutch.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Dutch.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.English" id="apidoc.module.yadda.localisation.English">module yadda.localisation.English</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.English.library" id="apidoc.element.yadda.localisation.English.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.English.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.English.localise" id="apidoc.element.yadda.localisation.English.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.English.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.English.localise_library" id="apidoc.element.yadda.localisation.English.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.English.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.French" id="apidoc.module.yadda.localisation.French">module yadda.localisation.French</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.French.library" id="apidoc.element.yadda.localisation.French.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.French.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.French.localise" id="apidoc.element.yadda.localisation.French.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.French.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.French.localise_library" id="apidoc.element.yadda.localisation.French.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.French.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.German" id="apidoc.module.yadda.localisation.German">module yadda.localisation.German</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.German.library" id="apidoc.element.yadda.localisation.German.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.German.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.German.localise" id="apidoc.element.yadda.localisation.German.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.German.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.German.localise_library" id="apidoc.element.yadda.localisation.German.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.German.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Norwegian" id="apidoc.module.yadda.localisation.Norwegian">module yadda.localisation.Norwegian</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Norwegian.library" id="apidoc.element.yadda.localisation.Norwegian.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Norwegian.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Norwegian.localise" id="apidoc.element.yadda.localisation.Norwegian.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Norwegian.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Norwegian.localise_library" id="apidoc.element.yadda.localisation.Norwegian.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Norwegian.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Pirate" id="apidoc.module.yadda.localisation.Pirate">module yadda.localisation.Pirate</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Pirate.library" id="apidoc.element.yadda.localisation.Pirate.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Pirate.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Pirate.localise" id="apidoc.element.yadda.localisation.Pirate.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Pirate.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Pirate.localise_library" id="apidoc.element.yadda.localisation.Pirate.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Pirate.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Polish" id="apidoc.module.yadda.localisation.Polish">module yadda.localisation.Polish</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Polish.library" id="apidoc.element.yadda.localisation.Polish.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Polish.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Polish.localise" id="apidoc.element.yadda.localisation.Polish.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Polish.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Polish.localise_library" id="apidoc.element.yadda.localisation.Polish.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Polish.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Portuguese" id="apidoc.module.yadda.localisation.Portuguese">module yadda.localisation.Portuguese</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Portuguese.library" id="apidoc.element.yadda.localisation.Portuguese.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Portuguese.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Portuguese.localise" id="apidoc.element.yadda.localisation.Portuguese.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Portuguese.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Portuguese.localise_library" id="apidoc.element.yadda.localisation.Portuguese.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Portuguese.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Russian" id="apidoc.module.yadda.localisation.Russian">module yadda.localisation.Russian</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Russian.library" id="apidoc.element.yadda.localisation.Russian.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Russian.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Russian.localise" id="apidoc.element.yadda.localisation.Russian.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Russian.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Russian.localise_library" id="apidoc.element.yadda.localisation.Russian.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Russian.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Spanish" id="apidoc.module.yadda.localisation.Spanish">module yadda.localisation.Spanish</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Spanish.library" id="apidoc.element.yadda.localisation.Spanish.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Spanish.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Spanish.localise" id="apidoc.element.yadda.localisation.Spanish.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Spanish.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Spanish.localise_library" id="apidoc.element.yadda.localisation.Spanish.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Spanish.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.localisation.Ukrainian" id="apidoc.module.yadda.localisation.Ukrainian">module yadda.localisation.Ukrainian</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Ukrainian.library" id="apidoc.element.yadda.localisation.Ukrainian.library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Ukrainian.</span>library
+        <span class="apidocSignatureSpan">(dictionary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">library = function (dictionary) {
+    return _this.localise_library(new Library(dictionary));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+./test/steps/bottles-library.js
+```js
+var assert = require('assert');
+var English = require('yadda').localisation.English;
+var Wall = require('../../lib/wall'); // The library that you wish to test
+
+module.exports = (function() {
+return English.<span class="apidocCodeKeywordSpan">library</span>()
+  .given("$NUM green bottles are standing on the wall", function(number, next) {
+     wall = new Wall(number);
+     next();
+  })
+  .when("$NUM green bottle accidentally falls", function(number, next) {
+     wall.fall(number);
+     next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Ukrainian.localise" id="apidoc.element.yadda.localisation.Ukrainian.localise">
+        function <span class="apidocSignatureSpan">yadda.localisation.Ukrainian.</span>localise
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise = function (keyword) {
+    if (vocabulary[keyword] === undefined) throw new Error('Keyword "' + keyword + '" has not been translated into ' + name + '.');
+    return vocabulary[keyword];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return _this.localise_library(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.<span class="apidocCodeKeywordSpan">localise</span>(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.localisation.Ukrainian.localise_library" id="apidoc.element.yadda.localisation.Ukrainian.localise_library">
+        function <span class="apidocSignatureSpan">yadda.localisation.Ukrainian.</span>localise_library
+        <span class="apidocSignatureSpan">(library)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localise_library = function (library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+                return library.define(signature, fn, ctx, options);
+            });
+        };
+    });
+    return library;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _this = this;
+
+// See http://github.com/acuminous/yadda#203
+this.is_language = true;
+
+this.library = function(dictionary) {
+    return _this.<span class="apidocCodeKeywordSpan">localise_library</span>(new Library(dictionary));
+};
+
+this.localise_library = function(library) {
+    $(vocabulary._steps).each(function(keyword) {
+        library[keyword] = function(signatures, fn, ctx, options) {
+            return $(signatures).each(function(signature) {
+                signature = prefix_signature(_this.localise(keyword), signature);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.parsers" id="apidoc.module.yadda.parsers">module yadda.parsers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.parsers.FeatureFileParser" id="apidoc.element.yadda.parsers.FeatureFileParser">
+        function <span class="apidocSignatureSpan">yadda.parsers.</span>FeatureFileParser
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FeatureFileParser = function (options) {
+
+    var fs = require('../shims').fs;
+    var FeatureParser = require('./FeatureParser');
+    var parser = new FeatureParser(options);
+
+    this.parse = function(file, next) {
+        var text = fs.readFileSync(file, 'utf8');
+        var feature = parser.parse(text);
+        return next &amp;&amp; next(feature) || feature;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.parsers.FeatureParser" id="apidoc.element.yadda.parsers.FeatureParser">
+        function <span class="apidocSignatureSpan">yadda.parsers.</span>FeatureParser
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FeatureParser = function (options) {
+
+<span class="apidocCodeCommentSpan">    /* eslint-disable no-redeclare */
+</span>    var defaults = { language: Localisation.default, leftPlaceholderChar: '[', rightPlaceholderChar: ']'};
+    var options = options &amp;&amp; options.is_language ? { language: options } : options || defaults;
+    var language = options.language || defaults.language;
+    var left_placeholder_char = options.leftPlaceholderChar || defaults.leftPlaceholderChar;
+    var right_placeholder_char = options.rightPlaceholderChar || defaults.rightPlaceholderChar;
+    /* eslint-enable no-redeclare */
+
+    var FEATURE_REGEX = new RegExp('^\\s*' + language.localise('feature') + ':\\s*(.*)', 'i');
+    var SCENARIO_REGEX = new RegExp('^\\s*' + language.localise('scenario') + ':\\s*(.*)', 'i');
+    var BACKGROUND_REGEX = new RegExp('^\\s*' + language.localise('background') + ':\\s*(.*)', 'i');
+    var EXAMPLES_REGEX = new RegExp('^\\s*' + language.localise('examples') + ':', 'i');
+    var TEXT_REGEX = new RegExp('^(.*)$', 'i');
+    var SINGLE_LINE_COMMENT_REGEX = new RegExp('^\\s*#');
+    var MULTI_LINE_COMMENT_REGEX = new RegExp('^\\s*#{3,}');
+    var BLANK_REGEX = new RegExp('^(\\s*)$');
+    var DASH_REGEX = new RegExp('(^\\s*[\\|\u2506]?-{3,})');
+    var SIMPLE_ANNOTATION_REGEX = new RegExp('^\\s*@([^=]*)$');
+    var NVP_ANNOTATION_REGEX = new RegExp('^\\s*@([^=]*)=(.*)$');
+
+    var specification;
+    var comment;
+
+    this.parse = function(text, next) {
+        reset();
+        split(text).each(parse_line);
+        return next &amp;&amp; next(specification.export()) || specification.export();
+    };
+
+    function reset() {
+        specification = new Specification();
+        comment = false;
+    }
+
+    function split(text) {
+        return $(text.split(/\r\n|\n/));
+    }
+
+    function parse_line(line, index) {
+        var match;
+        var line_number = index + 1;
+        try {
+            // eslint-disable-next-line no-return-assign
+            if (match = MULTI_LINE_COMMENT_REGEX.test(line)) return comment = !comment;
+            if (comment) return;
+            if (match = SINGLE_LINE_COMMENT_REGEX.test(line)) return;
+            if (match = SIMPLE_ANNOTATION_REGEX.exec(line)) return specification.handle('Annotation', { key: StringUtils.trim(match
+[1]), value: true }, line_number);
+            if (match = NVP_ANNOTATION_REGEX.exec(line)) return specification.handle('Annotation', { key: StringUtils.trim(match
+[1]), value: StringUtils.trim(match[2]) }, line_number);
+            if (match = FEATURE_REGEX.exec(line)) return specification.handle('Feature', match[1], line_number);
+            if (match = SCENARIO_REGEX.exec(line)) return specification.handle('Scenario', match[1], line_number);
+            if (match = BACKGROUND_REGEX.exec(line)) return specification.handle('Background', match[1], line_number);
+            if (match = EXAMPLES_REGEX.exec(line)) return specification.handle('Examples', line_number);
+            if (match = BLANK_REGEX.exec(line)) return specification.handle('Blank', match[0], line_number);
+            if (match = DASH_REGEX.exec(line)) return specification.handle('Dash', match[1], line_number);
+            if (match = TEXT_REGEX.exec(line)) return specification.handle('Text', match[1], line_number);
+        } catch (e) {
+            e.message = 'Error parsing line ' + (line_number) + ', "' + line + '".\nOriginal error was: ' + e.message;
+            throw e;
+        }
+    }
+
+    var Handlers = function(handlers) {
+
+        // eslint-disable-next-line no-redeclare
+        var handlers = handlers || {};
+
+        this.register = function(event, handler) {
+            handlers[event] = handler;
+        };
+
+        this.unregister = function() {
+            $(Array.prototype.slice.call(arguments)).each(function(event) {
+                delete handlers[event];
+            });
+        };
+
+        this.find = function(event) {
+            if (!handlers[event.toLowerCase()]) throw new Error(event + ' is unexpected at this time');
+            return { handle: handlers[event.toLowerCase()] };
+        };
+    };
+
+    var Specification = function() {
+
+        var current_ele ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.parsers.StepParser" id="apidoc.element.yadda.parsers.StepParser">
+        function <span class="apidocSignatureSpan">yadda.parsers.</span>StepParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StepParser = function () {
+
+    var NON_BLANK_REGEX = /[^\s]/;
+
+    this.parse = function(text, next) {
+        var steps = split(text).find_all(non_blanks);
+        return next &amp;&amp; next(steps) || steps;
+    };
+
+    var split = function(text) {
+        return $(text.split(/\n/));
+    };
+
+    var non_blanks = function(text) {
+        return text &amp;&amp; NON_BLANK_REGEX.test(text);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.phantom_process" id="apidoc.module.yadda.phantom_process">module yadda.phantom_process</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.phantom_process.cwd" id="apidoc.element.yadda.phantom_process.cwd">
+        function <span class="apidocSignatureSpan">yadda.phantom_process.</span>cwd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cwd = function () {
+    return fs.workingDirectory;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yadda.plugins" id="apidoc.module.yadda.plugins">module yadda.plugins</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yadda.plugins.casper" id="apidoc.element.yadda.plugins.casper">
+        function <span class="apidocSignatureSpan">yadda.plugins.</span>casper
+        <span class="apidocSignatureSpan">(yadda, casper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">casper = function (yadda, casper) {
+
+    var EventBus = require('yadda').EventBus;
+
+    yadda.interpreter.interpret_step = function(step, ctx, next) {
+
+        var _this = this;
+        casper.then(function() {
+            casper.test.info(step);
+            EventBus.instance().send(EventBus.ON_STEP, { step: step, ctx: ctx });
+            _this.rank_macros(step).clear_winner().interpret(step, ctx, next);
+        });
+    };
+
+    casper.yadda = function(script, ctx) {
+        if (script === undefined) return this;
+        yadda.run(script, ctx);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
